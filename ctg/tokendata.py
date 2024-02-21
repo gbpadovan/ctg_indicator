@@ -211,7 +211,12 @@ class TokenData:
         except:
             raise Exception('DataFrame empty, verify')
 
-        return  token_df.loc[mask].pair_address.values[0]
+        addr = token_df.loc[mask].pair_address.values[0]
+
+        if pd.isna(addr):
+            raise Exception(f'No address found for token: {token_name} | quote_token: {quote_token} | pool: {pool}. Verify the support table.')
+        
+        return addr
     
     
     def include_last_quote(self, token:str, clean_data:bool=False):
@@ -224,7 +229,7 @@ class TokenData:
         :return:
             Historical price data as pd.DataFrame
         """
-        df = td.load_dataset(token=token)
+        df = self.load_dataset(token=token)
         chain= 'pulsechain'
         date = pd.Timestamp.today(tz='UTC').normalize().tz_localize(None)
         pair_address = self.find_addr_by_token(token_name=token)

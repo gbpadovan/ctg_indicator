@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project creates a new Technical Analisys indicator that uses the ratio between two prices: Crypto X Gold, then calculates ROC (Rate of Change) for 4 previous weeks over this ratio. 
+This project creates a new Technical Analysis indicator that uses the ratio between two prices: Crypto X Gold, then calculates ROC (Rate of Change) for 4 previous weeks over this ratio. 
 The number obtained by this formula is then used to create a buy/sell signal to be used in a trading strategy.
 
 * The inspiration for this project is the "Saylor to Schiff Indicator" developed by the trader Michael Silva: https://www.youtube.com/watch?v=zuG9Tjnud9k

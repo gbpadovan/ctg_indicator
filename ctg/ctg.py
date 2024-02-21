@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from ta.momentum import ROCIndicator
 
 from .directories import Directories
 from .golddata import GoldData
